@@ -27,4 +27,4 @@
 
 ![alt text](./public/6.png)
 
-- #### 100 eth transfered from account 2 to account 3
+- #### 100 ETH transfered from account 2 to account 3
