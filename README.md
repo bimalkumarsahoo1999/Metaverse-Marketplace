@@ -1,15 +1,30 @@
-# Basic Sample Hardhat Project
+# Metaverse Marketplace
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+#### Connected to account 3 in the metamask wallet
 
-Try running some of the following tasks:
+#### Creating 1st NFT for sale
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+- #### charges gas fee and listingPrice
+  ![alt text](./public/1.png)
+
+#### Creating 2nd NFT for sale
+
+![alt text](./public/2.png)
+
+#### Homepage
+
+![alt text](./public/3.png)
+
+#### Creator's Dashboard
+
+![alt text](./public/4.png)
+
+#### Connected to account 2 in the metamask wallet
+
+![alt text](./public/5.png)
+
+#### Bought akutar-nft from Account 2
+
+![alt text](./public/6.png)
+
+- #### 100 eth transfered from account 2 to account 3
