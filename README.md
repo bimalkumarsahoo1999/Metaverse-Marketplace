@@ -7,7 +7,8 @@
 #### Creating 1st NFT for sale
 
 - #### charges gas fee and listingPrice
-  ![alt text](./public/1.png)
+
+![alt text](./public/1.png)
 
 #### Creating 2nd NFT for sale
 
