@@ -34,7 +34,6 @@ export default function CreateItem() {
   async function uploadToIPFS() {
     const { name, description, price } = formInput;
     if (!name || !description || !price || !fileUrl) return;
-    /* first, upload to IPFS */
     const data = JSON.stringify({
       name,
       description,
@@ -43,7 +42,6 @@ export default function CreateItem() {
     try {
       const added = await client.add(data);
       const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-      /* after file is uploaded to IPFS, return the URL to use it in the transaction */
       return url;
     } catch (error) {
       console.log("Error uploading file: ", error);
@@ -57,7 +55,6 @@ export default function CreateItem() {
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
 
-    /* next, create the item */
     const price = ethers.utils.parseUnits(formInput.price, "ether");
     let contract = new ethers.Contract(
       marketplaceAddress,

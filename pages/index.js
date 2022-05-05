@@ -13,8 +13,8 @@ export default function Home() {
   useEffect(() => {
     loadNFTs();
   }, []);
+
   async function loadNFTs() {
-    /* create a generic provider and query for unsold market items */
     const provider = new ethers.providers.JsonRpcProvider();
     const contract = new ethers.Contract(
       marketplaceAddress,
@@ -23,10 +23,6 @@ export default function Home() {
     );
     const data = await contract.fetchMarketItems();
 
-    /*
-     *  map over items returned from smart contract and format
-     *  them as well as fetch their token metadata
-     */
     const items = await Promise.all(
       data.map(async (i) => {
         const tokenUri = await contract.tokenURI(i.tokenId);
@@ -48,7 +44,6 @@ export default function Home() {
     setLoadingState("loaded");
   }
   async function buyNft(nft) {
-    /* needs the user to sign the transaction, so will use Web3Provider and sign it */
     const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
@@ -59,7 +54,6 @@ export default function Home() {
       signer
     );
 
-    /* user will be prompted to pay the asking proces to complete the transaction */
     const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
     const transaction = await contract.createMarketSale(nft.tokenId, {
       value: price,
@@ -69,6 +63,7 @@ export default function Home() {
   }
   if (loadingState === "loaded" && !nfts.length)
     return <h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>;
+
   return (
     <div className="flex justify-center">
       <div className="px-4" style={{ maxWidth: "1600px" }}>
