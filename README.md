@@ -1,5 +1,7 @@
 # Metaverse Marketplace
 
+#### Metaverse Marketplace is a platform where users can buy and sell NFTs. A listing fee will be taken from the seller and transerred to the contract owner upon completion of transaction of any scale.
+
 #### Connected to account 3 in the metamask wallet
 
 #### Creating 1st NFT for sale
